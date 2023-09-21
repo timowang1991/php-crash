@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  myxampp:
+    image: tomsik68/xampp:8.1.6
+    container_name: myxampp
+    ports:
+      - "41061:22"
+      - "8080:80"
+    volumes:
+      - ./:/opt/lampp/htdocs/
