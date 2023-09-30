@@ -40,6 +40,10 @@
     define('HOST', 'localhost'); // constant definition
     define('DB_NAME', 'dev_db');
 
-    echo HOST;
-    echo DB_NAME;
+    echo HOST . '<br>';
+    echo DB_NAME . '<br>';
+
+    echo __LINE__ . '<br>'; // magic constant are ones with __
+    echo __LINE__ . '<br>';
+    echo __DIR__ . '<br>';
 ?>
