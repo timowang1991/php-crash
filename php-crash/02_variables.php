@@ -39,6 +39,13 @@
 
     define('HOST', 'localhost'); // constant definition
     define('DB_NAME', 'dev_db');
+    if (true) {
+        define('BAR', 'bar');
+    }
+    echo BAR . '<br>'; // resolves no error
+    if (defined('BAR')) {
+        echo 'BAR is already defined' . '<br>';
+    }
 
     echo HOST . '<br>';
     echo DB_NAME . '<br>';
