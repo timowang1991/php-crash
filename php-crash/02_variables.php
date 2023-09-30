@@ -43,7 +43,7 @@
     echo HOST . '<br>';
     echo DB_NAME . '<br>';
 
-    echo __LINE__ . '<br>'; // magic constant are ones with __
+    echo __LINE__ . '<br>'; // magic constant are ones with __. All these "magical" constants are resolved at compile time, unlike regular constants, which are resolved at runtime. These special constants are case-insensitive 
     echo __LINE__ . '<br>';
     echo __DIR__ . '<br>';
 ?>
