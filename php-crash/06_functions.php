@@ -31,5 +31,13 @@
     echo '<br>';
 
     $multiple = fn($n1, $n2) => $n1 * $n2; // arrow function
-    echo $multiple(10, 5);
+    echo $multiple(10, 5) . '<br>';
+
+    // variadic function
+    function sum2(int|float ...$nums) { // rest operator
+        var_dump($nums);
+        echo '<br>';
+        return array_sum($nums);
+    }
+    echo sum2(1, 2, 3, 4, 5) . '<br>';
 ?>
