@@ -40,4 +40,11 @@
         return array_sum($nums);
     }
     echo sum2(1, 2, 3, 4, 5) . '<br>';
+
+    // named arguments
+    function sum3($a, $b) {
+        var_dump($a, $b);
+        return $a + $b;
+    }
+    echo sum3(b: 10, a: 20) . '<br>';
 ?>
