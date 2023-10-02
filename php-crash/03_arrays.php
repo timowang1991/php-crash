@@ -53,4 +53,15 @@
     echo $people[1]['email'];
 
     var_dump(json_encode($people));
+
+    $nums = [5, 3, 9, 11];
+    list($a, $b) = $nums;
+    echo $a . '<br>';
+
+    [$a, $b] = $nums;
+    echo $a . ', ' . $b .  '<br>';
+
+    $nums = ['example' => 5, 3, 9, 11];
+    ['example' => $a, 0 => $b] = $nums;
+    echo $a . ', ' . $b .  '<br>';
 ?>
