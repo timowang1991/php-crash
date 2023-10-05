@@ -7,7 +7,7 @@ class User {
     public $email;
     public $password;
 
-    public function __construct($name, $email, $password) {
+    public function __construct($name, $email, $password) { // magic methods
         // echo 'constructor', '<br/>';
         $this->name = $name;
         $this->email = $email;
