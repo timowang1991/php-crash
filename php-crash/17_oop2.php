@@ -85,3 +85,35 @@ echo '<br>';
 
 Account::printArr([1, 2, 3]);
 echo '<br>';
+
+// final class Toaster // final can stop this class from being extended
+class Toaster {
+    protected int $slots;
+
+    public function __construct(int $slots) {
+        $this->slots = $slots;
+    }
+
+    // final public function toast() {  // final can stop this method from being overriden
+    public function toast() {
+        echo "Toasting {$this->slots} bread" . "<br>";
+    }
+}
+
+class ToasterPremium extends Toaster {
+    protected int $slots;
+    private int $duration = 1;
+
+    public function __construct(int $newDuration) {
+        parent::__construct(4);
+        $this->duration = $newDuration;
+    }
+
+    public function toast() {
+        parent::toast();
+        echo "Toasting {$this->slots} bread for {$this->duration} minutes" . "<br>";
+    }
+}
+
+$myToaster = new ToasterPremium(3);
+$myToaster->toast();
