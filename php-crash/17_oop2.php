@@ -15,8 +15,8 @@ class Account {
 
     // shorthand syntax
     public function __construct(
-        public string $newName,
-        public float $newBalance
+        private string $newName,
+        private float $newBalance
     ) {
         // self points to the class instead of an instance
         self::$count++;
@@ -25,6 +25,23 @@ class Account {
     public function deposit(float $amount) {
         $this->newBalance += $amount;
         return $this;
+    }
+
+    public function getBalance() {
+        return "$" . $this->newBalance;
+    }
+
+    public function setBalance(float $newBalance) {
+        if ($newBalance < 0) {
+            return;
+        }
+        
+        $this->newBalance = $newBalance;
+        $this->sendEmail();
+    }
+
+    private function sendEmail() {
+        echo 'Email Sent';
     }
 
     public static function printArr(array $array) {
@@ -41,6 +58,12 @@ var_dump($myAccount);
 echo '<br>';
 var_dump($johnsAccount);
 echo '<br><br>';
+
+echo $myAccount->getBalance();
+echo '<br>';
+
+$myAccount->setBalance(20);
+echo '<br>';
 
 // $myAccount->balance = 10;
 $myAccount->deposit(100)->deposit(100);
