@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 class Account {
     public const INTEREST_RATE = 2;
+    public static int $count = 0;
     // public string $name;
     // public int $balance = 5;
 
@@ -16,11 +17,20 @@ class Account {
     public function __construct(
         public string $newName,
         public float $newBalance
-    ) {}
+    ) {
+        // self points to the class instead of an instance
+        self::$count++;
+    }
 
     public function deposit(float $amount) {
         $this->newBalance += $amount;
         return $this;
+    }
+
+    public static function printArr(array $array) {
+        echo '<pre>';
+        print_r($array);
+        echo '</pre>';
     }
 }
 
@@ -41,4 +51,14 @@ echo '<br><br>';
 
 // access const in a class
 var_dump(Account::INTEREST_RATE);
+echo '<br>';
+
+// access static
+var_dump(Account::$count);
+echo '<br>';
+
+var_dump($myAccount::$count);
+echo '<br>';
+
+Account::printArr([1, 2, 3]);
 echo '<br>';
