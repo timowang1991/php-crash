@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 class Account {
+    public const INTEREST_RATE = 2;
     // public string $name;
     // public int $balance = 5;
 
@@ -37,3 +38,7 @@ var_dump($myAccount);
 echo '<br>';
 var_dump($johnsAccount);
 echo '<br><br>';
+
+// access const in a class
+var_dump(Account::INTEREST_RATE);
+echo '<br>';
